@@ -90,9 +90,12 @@ public:
 		/**
 		 * TODO *it
 		 */
-		T& operator*() const
-		{
+		T& operator*() const {
 			return (*context)[index];
+		}
+		
+		inline long long idx() const {
+			return index;
 		}
 		/**
 		 * a operator to check whether two iterators are same (pointing to the same memory).
@@ -174,9 +177,11 @@ public:
 		/**
 		 * TODO *it
 		 */
-		const T& operator*() const
-		{
+		const T& operator*() const {
 			return (*context)[index];
+		}
+		inline long long idx() const {
+			return index;
 		}
 		/**
 		 * a operator to check whether two iterators are same (pointing to the same memory).
@@ -221,6 +226,7 @@ public:
 		{
 			data[i] = target.data[i];
 		}
+		return (*this);
 	}
 	/**
 	 * assigns specified element with bounds checking
@@ -293,6 +299,9 @@ public:
 	 */
 	inline bool empty() const {
 		return value_size == 0;
+	}
+	inline bool full() const {
+		return value_capa == value_size;
 	}
 	/**
 	 * returns the number of elements

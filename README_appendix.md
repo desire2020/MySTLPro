@@ -8,3 +8,5 @@ const_iterator与iterator互相可以作为拷贝构造的原值。可以进行�
 iterator的私有数据成员的一些说明：
 index	下标	一个整数，表明当前迭代器所指的是哪一个元素。
 context	"语境"	一个指向vector<T>的指针，表明当前迭代器依赖于哪一个vector而生存。
+
+这种思路在设计deque的时候也被用到。
